@@ -1,0 +1,175 @@
+const chalk = require('chalk');
+
+module.exports = {
+	getInputParameters: function() {
+		const args = {
+			ua: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36',
+			directOnly: true,
+			destination: 'Everywhere',
+			wholeMonthStart: false,
+			wholeMonthEnd: false,
+			oneWay: true
+		};
+
+		process.argv.slice(2).map(function (val) {
+				let splitted = val.split('=');
+				if (splitted[0].search('--') !== -1)
+					args[splitted[0].replace('--', '')] = splitted[1];
+			}
+		);
+
+		if (args['monthEnd'] !== undefined) {
+			args['oneWay'] = false;
+		}
+
+		return args;
+	},
+	showHelp: function() {
+		var year = new Date().getFullYear();
+		var month = new Date().getMonth().toString().padStart(2, '0');
+		console.log(`You can specify the following parameters:
+		--username=username
+		--password=pwd
+		--directOnly=true\t(default: true)
+		--origin=FLR\t\t(IATA Code or City)
+		--destination=BLQ\t(IATA Code or City, default: Everywhere)
+		--wholeMonthStart=false\t(default: false)
+		--dayStart=6
+		--dayEnd=15
+		--monthStart=${month}\t\t(default: ${month})
+		--wholeMonthEnd=false
+		--monthEnd=${month}\t\t(default: ${month})
+		--yearStart=${year}\t\t(default: ${year})
+		--yearEnd=${year}\t\t(default: ${year})
+		--children=2\t\t(default: 0)
+		--adults=2\t\t(default: 1)
+
+		node index.js --directOnly=true --origin=PSA --month=08
+		`);
+	},
+	validateInputArguments: function (args) {
+		let valid = true;
+		if (args['origin'] === undefined) {
+			console.log(chalk.bgRed("Please select an airport of departure with --origin, eg. --origin=FLR.\n\n"));
+			valid = false;
+		}
+
+		if (args['monthStart'] === undefined) {
+			console.log(chalk.bgRed('The month need to be a number. Please select a month with --monthStart, eg. --monthStart=06.\n\n'));
+			valid = false;
+		}
+
+		if (args['dayStart'] === undefined && Object.keys(args).indexOf('wholeMonthStart') === 1) {
+			console.log(chalk.bgRed('The day need to be a number. Please select a day with --dayStart, eg. --dayStart=06.\n\n'));
+			valid = false;
+		}
+
+		if(valid == false)
+			throw Error(chalk.bgRed("Invalid input parameters. Specify --h to get some help\n\n"));
+
+	},
+	inputClear: async function (page, selector) {
+		await page.evaluate(selector => {
+			document.querySelector(selector).value = "";
+		}, selector);
+	},
+	fakingUserInteraction: async function (page) {
+		await page.evaluate(async () => {
+			await new Promise((resolve, reject) => {
+				document.elementFromPoint(10, 20).click();
+				function getRandomNumber(min, max) {
+					return Math.floor(Math.random() * (max - min)) + min;
+				}
+
+				for (var i = 0; i < getRandomNumber(15, 40); i++) {
+					var mouseMoveEvent = document.createEvent("MouseEvents");
+					mouseMoveEvent.initMouseEvent(
+						"mousemove",
+						true,
+						false,
+						window,
+						1,
+						getRandomNumber(50, 600),
+						getRandomNumber(50, 600),
+						getRandomNumber(50, 600),
+						getRandomNumber(50, 600),
+						false,
+						false,
+						false,
+						false,
+						0,
+						null
+					);
+
+					document.dispatchEvent(mouseMoveEvent)
+				};
+
+				var counter = getRandomNumber(10, 30);
+				var iterator = 0;
+
+				var timer = setInterval(() => {
+					window.scrollBy(0, getRandomNumber(40, 100));
+					iterator++;
+					if (iterator >= counter) {
+						clearInterval(timer);
+						resolve();
+					}
+				}, 300);
+			});
+		});
+	},
+	setDatepicker: async function (page, wholeMonth, day, month, year) {
+		if (wholeMonth !== false) {
+			await page.click('[class*="FlightDatepicker"] li:nth-of-type(2) button');
+			let monthNumberSelector = (parseInt(month) + 1) - new Date().getMonth();
+			await page.click('button[class*="Monthselector_monthselector__month"]:nth-of-type(' + monthNumberSelector + ')');
+			console.log(chalk.blue(`Selected the ${month} month`));
+		} else {
+			var year = year || new Date().getFullYear();
+			var month = month.toString().padStart(2, '0') || new Date().getMonth().toString().padStart(2, '0');
+
+			if (year != new Date().getFullYear() || month != new Date().getMonth().toString().padStart(2, '0'))
+				await page.select('select[name="months"]', `${year}-${month}`);
+
+			await page.evaluate(day => {
+				document.querySelectorAll('[class*="BpkCalendarDate_bpk-calendar-date"]:not([class*="BpkCalendarDate_bpk-calendar-date--outside"])')[(parseInt(day) - 1)].click();
+			}, day);
+		}
+	},
+	getRoutesData: async function (page) {
+		await page.waitForSelector('.day-list-item div article.result');
+		return await page.evaluate(() => {
+			var results = [];
+
+			var tickets = document.querySelectorAll('.day-list-item div article.result');
+			for (let i = 0; i < tickets.length; i++) {
+				var departureNodes = tickets[i].querySelectorAll('[class*="LegInfo__leg-depart"]');
+				var durationNodes = tickets[i].querySelectorAll('[class*="LegInfo__leg-stops-3lHev"]');
+				var arrivalNodes = tickets[i].querySelectorAll('[class*="LegInfo__leg-arrive"]');
+				var price = tickets[i].querySelector('.price').innerText;
+
+				var tempObj = {
+					routes: [],
+					price: price
+				};
+
+				for (let j = 0; j < departureNodes.length; j++) {
+					tempObj['routes'].push({
+						departure: departureNodes[j].innerText.replace(/\n/, ' '),
+						duration: durationNodes[j].innerText.replace(/\n/, ' '),
+						destination: arrivalNodes[j].innerText.replace(/\n/, ' ')
+					});
+				}
+				results.push(tempObj);
+			}
+
+			return JSON.stringify(results);
+		});
+	},
+	clickOnRecaptcha: async function (page) {
+		var frame = await page.frames()[2];
+		await frame.evaluate(() => {
+			document.querySelectorAll('.recaptcha-checkbox')[0].click();
+		}).catch((err) => console.log(chalk.yellow('captcha not found')));
+	}
+};
