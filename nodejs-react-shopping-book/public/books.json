@@ -1,0 +1,131 @@
+[
+  {
+    "id": 0,
+    "title": "Дурная кровь",
+    "author": "Роберт Гэлбрейт",
+    "image": "https://cv6.litres.ru/pub/c/elektronnaya-kniga/cover_415/63439561-robert-gelbreyt-durnaya-krov.jpg",
+    "price": 379,
+    "rating": 3
+  },
+  {
+    "id": 1,
+    "title": "Енн із Зелених дахів",
+    "author": "Люсі Монтгомері",
+    "image": "https://cv5.litres.ru/pub/c/elektronnaya-kniga/cover_415/14787255-lus-montgomer-enn-z-zelenih-dah-v.jpg",
+    "price": 39,
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "title": "Унесенные ветром. Том 1",
+    "author": "Маргарет Митчелл",
+    "image": "https://cv4.litres.ru/pub/c/elektronnaya-kniga/cover_415/131243-margaret-mitchell-unesennye-vetrom-tom-1.jpg",
+    "price": 90,
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "title": "Унесенные ветром. Том 2",
+    "author": "Маргарет Митчелл",
+    "image": "https://cv4.litres.ru/pub/c/elektronnaya-kniga/cover_415/131244-margaret-mitchell-unesennye-vetrom-tom-2.jpg",
+    "price": 112,
+    "rating": 3
+  },
+  {
+    "id": 4,
+    "title": "Над пропастью во ржи",
+    "author": "Дж. Д. Сэлинджер",
+    "image": "https://cv8.litres.ru/pub/c/elektronnaya-kniga/cover_415/127781-dzherom-devid-selindzher-48197-nad-propastu-vo-rzhi.jpg",
+    "price": 199,
+    "rating": 1
+  },
+  {
+    "id": 5,
+    "title": "Убить пересмешника",
+    "author": "Харпер Ли",
+    "image": "https://cv0.litres.ru/pub/c/pdf-kniga/cover_415/41249205-harper-li-ubit-peresmeshnika-41249205.jpg",
+    "price": 629,
+    "rating": 0
+  },
+  {
+    "id": 6,
+    "title": "Великий Гэтсби",
+    "author": "Фрэнсис Скотт Фицджеральд",
+    "image": "https://cv9.litres.ru/pub/c/elektronnaya-kniga/cover_415/9447797-frensis-skott-ficdzherald-velikiy-getsbi.jpg",
+    "price": 193,
+    "rating": 4
+  },
+  {
+    "id": 7,
+    "title": "Зелёная миля",
+    "author": "Стивен Кинг",
+    "image": "https://cv5.litres.ru/pub/c/elektronnaya-kniga/cover_415/119255-stiven-king-zelenaya-milya-119255.jpg",
+    "price": 120,
+    "rating": 0
+  },
+  {
+    "id": 8,
+    "title": "7 навыков высокоэффективных людей: Мощные...",
+    "author": "Стивен Кови",
+    "image": "https://cv8.litres.ru/pub/c/elektronnaya-kniga/cover_415/4239285--.jpg",
+    "price": 347,
+    "rating": 5
+  },
+  {
+    "id": 9,
+    "title": "Девушка во льду",
+    "author": "Роберт Брындза",
+    "image": "https://cv3.litres.ru/pub/c/elektronnaya-kniga/cover_415/27351732-robert-bryndza-12646976-devushka-vo-ldu.jpg",
+    "price": 882,
+    "rating": 2
+  },
+  {
+    "id": 10,
+    "title": "Магия утра. Как первый час дня определяет ваш успех",
+    "author": "Хэл Элрод",
+    "image": "https://cv1.litres.ru/pub/c/elektronnaya-kniga/cover_415/19063017-hel-elrod-magiya-utra.jpg",
+    "price": 829,
+    "rating": 1
+  },
+  {
+    "id": 11,
+    "title": "Азиатская европеизация. История Российского государства. Царь Петр...",
+    "author": "Борис Акунин",
+    "image": "https://cv3.litres.ru/sbc/31629439_cover_185-elektronnaya-kniga-boris-akunin-aziatskaya-evropeizaciya-istoriya-rossiyskogo-gosudarstva-car-petr-alekseevich.jpg",
+    "price": 389,
+    "rating": 2
+  },
+  {
+    "id": 12,
+    "title": "Ведьмак (сборник)",
+    "author": "Анджей Сапковский",
+    "image": "https://cv6.litres.ru/pub/c/elektronnaya-kniga/cover_415/6375365-andzhey-sapkovskiy-vedmak.jpg",
+    "price": 424,
+    "rating": 3
+  },
+  {
+    "id": 13,
+    "title": "Атлант расправил плечи",
+    "author": "Айн Рэнд",
+    "image": "https://cv7.litres.ru/pub/c/elektronnaya-kniga/cover_415/4236675-ayn-rend-atlant-raspravil-plechi.jpg",
+    "price": 157,
+    "rating": 2
+  },
+  {
+    "id": 14,
+    "title": "Цена вопроса. Том 1",
+    "author": "Александра Маринина",
+    "image": "https://cv6.litres.ru/sbc/33285466_cover_185-elektronnaya-kniga-aleksandra-marinina-cena-voprosa-tom-1-22638660.jpg",
+    "price": 664,
+    "rating": 0
+  },
+  {
+    "id": 15,
+    "title": "Исчезнувшая",
+    "author": "Гиллиан Флинн",
+    "image": "https://cv2.litres.ru/sbc/11029722_cover_185-elektronnaya-kniga-gillian-flinn-ischeznuvshaya.jpg",
+    "price": 476,
+    "rating": 4
+  }
+
+]

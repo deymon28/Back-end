@@ -1,0 +1,524 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Raleway:ital,wght@1,300&display=swap');
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eeebd9;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 18px;
+    color: #4b332b;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 70px;
+}
+
+.header__logo {
+    float: right;
+    position: absolute;
+    left: 10px;
+    font-size: 30px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    padding: 0px 10px;
+    color: #4c3229;
+}
+
+.header__logo:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 20%;
+    border-radius: 50%;
+    left: 30%;
+    border: 9px solid #b6a645;
+}
+
+.header__logo:active {
+    float: right;
+    position: absolute;
+    left: 10px;
+    font-size: 30px;
+    border: 2px solid #ffefd5;
+    border-radius: 100%;
+    padding: 0px 10px;
+    color: #b88979;
+}
+
+.header__logo:active:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 20%;
+    border-radius: 50%;
+    left: 30%;
+    border: 9px solid #fad73e;
+}
+
+h1,
+h5 {
+    line-height: 200px;
+    color: #d3d2d2;
+    font-family: 'Dancing Script', cursive;
+    position: relative;
+}
+
+h1 {
+    font-size: 72px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 51px;
+    color: #d3d2d2;
+    font-family: 'Dancing Script', cursive;
+    position: relative;
+    text-align: center;
+}
+
+h3 {
+    font-size: 42px;
+    line-height: 200px;
+    color: #455325;
+    font-family: 'Dancing Script', cursive;
+    position: relative;
+    text-align: center;
+}
+
+h4 {
+    font-size: 32px;
+    color: #53382f;
+    font-family: 'Dancing Script', cursive;
+    position: relative;
+}
+
+h5 {
+    font-size: 24px;
+    text-align: center;
+}
+
+h6 {
+    font-size: 14px;
+    color: #d3d2d2;
+    font-family: 'Dancing Script', cursive;
+    position: relative;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+p {
+    line-height: 100px;
+    margin-bottom: 15px;
+    color: #d3d2d2;
+    text-align: center;
+}
+
+a {
+    color: #000000;
+}
+
+a:hover,
+a:focus {
+    color: #4c3229;
+    text-decoration: none;
+    outline: 0;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #4c3229;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.navbar {
+    font-weight: 100;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.navbar-inverse {
+    background: #9ea37f;
+    border-color: #9ea37f;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #4c3229;
+}
+
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:hover,
+.navbar-inverse .navbar-nav>.active>a:focus {
+    color: #4c3229;
+    background-color: #ebf0d7;
+}
+
+#headerwrap {
+    background-image: url(../img/slider-fon.jpg);
+    background-repeat: no-repeat;
+    margin-top: -10px;
+    padding-top: 20px;
+    text-align: center;
+    background-attachment: relative;
+    background-position: center;
+    min-height: 650px;
+    width: 100%;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.c-card {
+    margin-bottom: 32px;
+}
+
+.c-card__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 480px;
+    -webkit-box-shadow: 0 16px 30px #0000004d, 0 16px 12px #00000033;
+    box-shadow: 0 16px 30px #0000004d, 0 16px 12px #00000033;
+}
+
+.c-card__wrapper:hover .c-info li span {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -10px);
+    transform: translate(-50%, -10px);
+}
+
+.c-card__wrapper:hover .c-card__body {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.c-card__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 1.5rem 1rem;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.c-card__body {
+    margin-top: auto;
+    color: #ffffff;
+    -webkit-transform: translateY(calc(96px + 3.2rem));
+    transform: translateY(calc(96px + 3.2rem));
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.c-card__wrapper {
+    opacity: 3.5;
+}
+
+.c-card__content {
+    padding: 1em;
+    position: relative;
+    z-index: 1;
+}
+
+.c-card__author {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.c-card__title {
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.c-card__title a {
+    color: #fff;
+}
+
+.c-card__title a:hover {
+    text-decoration: none;
+}
+
+.c-card__desc {
+    height: 96px;
+    overflow: hidden;
+}
+
+.c-card__more {
+    display: inline-block;
+    margin: 1rem auto 0.5rem;
+    text-align: center;
+    color: #fff;
+    line-height: 1;
+    position: relative;
+    font-weight: 300;
+}
+
+.c-card__more:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.c-card__more:hover::after {
+    -webkit-transform: translate(20px, -50%);
+    transform: translate(20px, -50%);
+    opacity: 1;
+}
+
+.c-card__more::after {
+    content: '\2192';
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    -webkit-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+
+.c-date {
+    color: #fff;
+    font-size: 14px;
+}
+
+.c-info {
+    list-style: none;
+    margin: 0;
+}
+
+.c-info li {
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0 4px;
+}
+
+.c-info li a {
+    color: #ffffff;
+}
+
+.c-info li a:hover {
+    text-decoration: none;
+}
+
+.c-info li span {
+    font-size: 14px;
+    position: absolute;
+    left: 50%;
+    top: -4px;
+    opacity: 0;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    -webkit-transition: all ease 0.25s;
+    transition: all ease 0.25s;
+}
+
+.likebtn-wrapper {
+    cursor: default;
+    line-height: 16px;
+    display: inline-block;
+    white-space: nowrap;
+    direction: ltr;
+    text-indent: 0;
+    position: relative;
+}
+
+.about {
+    background-image: url(../img/about-fon.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+    background-repeat: no-repeat;
+    padding: 25px 0px 45px;
+}
+
+.about__btn {
+    color: #ffffff;
+}
+
+.about__btn.default-btn:after {
+    color: #ffffff;
+}
+
+#dg {
+    background: #e6dfc3;
+    padding-top: 5px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.blok {
+    padding: 10px 15px 0px 15px;
+    -webkit-box-shadow: 0 10px 30px #0000004d, 0 16px 12px #00000033;
+    box-shadow: 0 10px 30px #0000004d, 0 16px 12px #00000033;
+    background-color: #d8ddbd;
+}
+
+.tilt {
+    -webkit-transform: all 0.5s ease;
+    -moz-transform: all 0.5s ease;
+    -o-transform: all 0.5s ease;
+    -ms-transform: all 0.5s ease;
+    transform: all 0.5s ease;
+    min-height: 360px;
+}
+
+.tilt:hover {
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+}
+
+.wrap {
+    background: #eeebd9;
+    height: 100vh;
+}
+
+.cool-b4-form .btn {
+    border-radius: 0;
+}
+
+.cool-b4-form .form-group {
+    position: relative;
+    padding-top: 20px;
+    margin-bottom: 0;
+    /* If there's only 1 input make it full height */
+}
+
+.cool-b4-form .form-group:first-child:last-child {
+    height: 100%;
+}
+
+.cool-b4-form .form-group:first-child:last-child .form-control {
+    height: 100%;
+}
+
+.cool-b4-form .form-group textarea {
+    resize: none;
+    padding: 40px 12px;
+}
+
+.cool-b4-form .form-group .input-highlight {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #9ea37f;
+    position: absolute;
+    display: block;
+    bottom: 0;
+    transition: width 0.4s ease;
+}
+
+.cool-b4-form .form-group label {
+    position: absolute;
+    left: 10px;
+    top: 25px;
+    transition: all 0.4s ease;
+}
+
+.cool-b4-form .form-group .form-control {
+    border-radius: 0;
+    border-width: 0 0 2px 0;
+}
+
+.cool-b4-form .form-group .form-control:focus,
+.cool-b4-form .form-group .form-control.hasValue {
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
+.cool-b4-form .form-group .form-control:focus~.input-highlight,
+.cool-b4-form .form-group .form-control.hasValue~.input-highlight {
+    width: 100%;
+}
+
+.cool-b4-form .form-group .form-control:focus~label,
+.cool-b4-form .form-group .form-control.hasValue~label {
+    transform: scale(0.7);
+    top: 0;
+    left: 0;
+}
+
+@import "compass/css3";
+.roundedOne label:after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 4.5px;
+    left: -5.5px;
+    background: #ae2727;
+    opacity: 0.3;
+    border-radius: 40px 10px 0px 10px;
+    transform-origin: 100% 100%;
+    transform: rotate(45deg);
+}
+
+.header__phone,
+.header__email {
+    color: #cbcacb;
+    letter-spacing: 0.25px;
+    line-height: 45px;
+    position: relative;
+}
+
+.header__phone {
+    padding-left: 20px;
+    padding-right: 30px;
+}
+
+.header__phone:before {
+    content: "\f095";
+    font-family: 'icomoon';
+    position: absolute;
+    left: 0;
+    color: #ffc222;
+}
+
+.header__email {
+    padding-left: 24px;
+}
+
+.header__email:before {
+    content: "\f003";
+    font-family: 'icomoon';
+    position: absolute;
+    left: 0;
+    color: #ffc222;
+}

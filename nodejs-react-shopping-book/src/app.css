@@ -1,0 +1,22 @@
+body {
+    margin-top: 110px;
+    background: #eeebd9;
+}
+
+.menu {
+    margin-bottom: 20px;
+}
+
+.popup {
+    max-width: 400px !important;
+}
+
+.card-image {
+    height: 350px;
+    overflow: hidden;
+    background: rgb(236, 241, 166);
+}
+
+.card-image img {
+    width: 100%;
+}
